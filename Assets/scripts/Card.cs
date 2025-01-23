@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    private TextMeshProUGUI text;
+    public TextMeshProUGUI text;
     public bool isSelected;
 
     private void Awake()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        isSelected = false;
     }
     public void Setword(string word)
     {
@@ -19,9 +17,15 @@ public class Card : MonoBehaviour
     public void Show()
     {
         isSelected = true;
+        text.gameObject.SetActive(true);
     }
     public void Hide()
     {
         isSelected = false;
+        text.gameObject.SetActive(false);
+    }
+    public void OnClick()
+    {
+        CardController.instance.SelectedCard(this);
     }
 }
