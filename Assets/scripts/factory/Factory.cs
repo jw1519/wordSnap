@@ -6,9 +6,12 @@ public class Factory : MonoBehaviour
 {
 
     private Card cardPrefab;
+    public Transform parent;
 
-    public ICard GetCard(Vector2 position)
+    public Card GetCard(Vector2 position)
     {
-
+        GameObject instance = Instantiate(cardPrefab.gameObject, parent);
+        Card newCard = instance.GetComponent<Card>();
+        return newCard;
     }
 }
