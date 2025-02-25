@@ -19,18 +19,6 @@ public class CardController : MonoBehaviour
             instance = this;
         }
     }
-    private void Start()
-    {
-        CreateCards();
-    }
-    public void CreateCards()
-    {
-        for (int i = 0; i < cards; i++)
-        {
-            Card card = Instantiate(cardPrefab);
-            card.transform.SetParent(gameBoard);
-        }
-    }
 
     public void SelectedCard(Card card)
     {
@@ -55,9 +43,15 @@ public class CardController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         //if a and b match
-
-        //else
-        a.Hide();
-        b.Hide();
+        if (a.cardID == b.cardID)
+        {
+            Debug.Log("Pair Found");
+        }
+        else
+        {
+            a.Hide();
+            b.Hide();
+        }
+        
     }
 }

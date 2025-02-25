@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,13 +7,16 @@ public class Card : MonoBehaviour
     public TextMeshProUGUI text;
     public bool isSelected;
 
+    public string cardName;
+    public int cardID;
+
     private void Awake()
     {
         isSelected = false;
     }
-    public void Setword(string word)
+    public void Setword()
     {
-        text.text = word;
+        text.text = cardName;
     }
     public void Show()
     {

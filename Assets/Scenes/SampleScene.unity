@@ -307,13 +307,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229558464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05f3e37f66f540b478d10992b16e1dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameBoard: {fileID: 1623351050}
   cardPrefab: {fileID: 1855879960015920421, guid: 806918aa1c8977a4b8aba0e678b34e3f, type: 3}
+  firstCardSelected: {fileID: 0}
+  SecondCardSelected: {fileID: 0}
+  cards: 12
 --- !u!4 &1229558466
 Transform:
   m_ObjectHideFlags: 0
@@ -531,6 +534,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2134662361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2134662363}
+  - component: {fileID: 2134662362}
+  m_Layer: 0
+  m_Name: cardfactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2134662362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134662361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1886ab842047fe743b6da974e42aadbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 1855879960015920421, guid: 806918aa1c8977a4b8aba0e678b34e3f, type: 3}
+  parent: {fileID: 1623351050}
+  textAssetWords: {fileID: 4900000, guid: 9bc6c0d6dc133844791330d98db34d94, type: 3}
+  textAssetSynonyms: {fileID: 4900000, guid: 32cd1597d1987d741b28f7675986a000, type: 3}
+--- !u!4 &2134662363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134662361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 557.8031, y: 324.86517, z: -0.29289573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -539,3 +590,4 @@ SceneRoots:
   - {fileID: 1930345346}
   - {fileID: 645064312}
   - {fileID: 1229558466}
+  - {fileID: 2134662363}
