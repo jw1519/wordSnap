@@ -6,6 +6,7 @@ public class Card : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public bool isSelected;
+    public bool isShown;
 
     public string cardName;
     public int cardID;
@@ -22,11 +23,13 @@ public class Card : MonoBehaviour
     {
         isSelected = true;
         text.gameObject.SetActive(true);
+        isShown = true;
     }
     public void Hide()
     {
         isSelected = false;
         text.gameObject.SetActive(false);
+        isShown = false;
     }
     public void OnClick()
     {

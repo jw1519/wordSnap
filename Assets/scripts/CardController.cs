@@ -12,7 +12,6 @@ public class CardController : MonoBehaviour
     Card firstCardSelected;
     Card SecondCardSelected;
 
-    public int cards = 12;
     private void Awake()
     {
         if (instance == null)
