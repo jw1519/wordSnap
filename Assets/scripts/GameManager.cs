@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             Factory.instance.Create(synonyms[i], i);
         }
         Factory.instance.ShuffleCards();
-        ShowCards();
+        //ShowCards();
     }
     public void ShowCards()
     {

@@ -92,6 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 6988848962275439291}
   isSelected: 0
+  isShown: 0
+  cardName: 
+  cardID: 0
 --- !u!114 &989455004717691675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,10 +243,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.85
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

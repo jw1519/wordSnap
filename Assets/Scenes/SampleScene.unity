@@ -475,7 +475,7 @@ MonoBehaviour:
   m_CellSize: {x: 110, y: 140}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
-  m_ConstraintCount: 4
+  m_ConstraintCount: 5
 --- !u!1 &1930345342
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textAssetWords: {fileID: 4900000, guid: 9bc6c0d6dc133844791330d98db34d94, type: 3}
   textAssetSynonyms: {fileID: 4900000, guid: 32cd1597d1987d741b28f7675986a000, type: 3}
-  amountOfPairs: 7
+  amountOfPairs: 10
   gameBoard: {fileID: 1623351050}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
