@@ -314,8 +314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameBoard: {fileID: 1623351050}
   cardPrefab: {fileID: 1855879960015920421, guid: 806918aa1c8977a4b8aba0e678b34e3f, type: 3}
-  firstCardSelected: {fileID: 0}
-  SecondCardSelected: {fileID: 0}
   cards: 12
 --- !u!4 &1229558466
 Transform:
@@ -325,12 +323,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229558464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 571.5, y: 311.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.696899, y: -13.365173, z: 0.29289573}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2134662363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623351049
 GameObject:
@@ -430,8 +428,8 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 110, y: 140}
   m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Constraint: 1
+  m_ConstraintCount: 4
 --- !u!1 &1930345342
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,8 +542,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2134662363}
   - component: {fileID: 2134662362}
+  - component: {fileID: 2134662364}
   m_Layer: 0
-  m_Name: cardfactory
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -579,15 +578,30 @@ Transform:
   m_LocalPosition: {x: 557.8031, y: 324.86517, z: -0.29289573}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1229558466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134662364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134662361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861bee3e177623e44ae649f6280037a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textAssetWords: {fileID: 4900000, guid: 9bc6c0d6dc133844791330d98db34d94, type: 3}
+  textAssetSynonyms: {fileID: 4900000, guid: 32cd1597d1987d741b28f7675986a000, type: 3}
+  amountOfPairs: 7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 2134662363}
   - {fileID: 1930345346}
   - {fileID: 645064312}
-  - {fileID: 1229558466}
-  - {fileID: 2134662363}

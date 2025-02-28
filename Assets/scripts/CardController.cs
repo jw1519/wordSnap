@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardController : MonoBehaviour
@@ -8,8 +7,8 @@ public class CardController : MonoBehaviour
     public Transform gameBoard;
     public Card cardPrefab;
 
-    public Card firstCardSelected;
-    public Card SecondCardSelected;
+    Card firstCardSelected;
+    Card SecondCardSelected;
 
     public int cards = 12;
     private void Awake()
@@ -19,7 +18,6 @@ public class CardController : MonoBehaviour
             instance = this;
         }
     }
-
     public void SelectedCard(Card card)
     {
         if (card.isSelected == false)
@@ -51,7 +49,6 @@ public class CardController : MonoBehaviour
         {
             a.Hide();
             b.Hide();
-        }
-        
+        } 
     }
 }

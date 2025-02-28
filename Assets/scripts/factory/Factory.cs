@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Factory : MonoBehaviour
 {
+    public static Factory instance;
 
     public Card cardPrefab;
     public Transform parent;
@@ -19,14 +20,10 @@ public class Factory : MonoBehaviour
 
     public void Awake()
     {
-        words = textAssetWords.text.Split("\n").ToList();
-        synonyms = textAssetSynonyms.text.Split("\n").ToList();
-        for(int i = 0; i < words.Count; i++)
+        if (instance == null)
         {
-            GameObject word = Create(words[i], i);
-            GameObject synonym = Create(synonyms[i], i);
+            instance = this;
         }
-        ShuffleCards();
     }
     public Card GetCard()
     {
@@ -34,14 +31,13 @@ public class Factory : MonoBehaviour
         Card newCard = instance.GetComponent<Card>();
         return newCard;
     }
-    public GameObject Create(string cardName, int id)
+    public void Create(string cardName, int id)
     {
         GameObject instance = Instantiate(cardPrefab.gameObject, parent);
         Card newCard = instance.GetComponent<Card>();
         newCard.cardName = cardName;
         newCard.cardID = id;
         newCard.Setword();
-        return instance;
     }
     public void ShuffleCards()
     {
