@@ -5,3 +5,6 @@ certain
 describe
 explain
 funny
+fine
+jolly
+fortunate

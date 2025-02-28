@@ -5,3 +5,6 @@ definite
 portray
 elaborate
 humorous
+acceptable
+cheery
+lucky
