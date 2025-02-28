@@ -314,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameBoard: {fileID: 1623351050}
   cardPrefab: {fileID: 1855879960015920421, guid: 806918aa1c8977a4b8aba0e678b34e3f, type: 3}
+  pairsFound: 0
   cards: 12
 --- !u!4 &1229558466
 Transform:
@@ -597,6 +598,7 @@ MonoBehaviour:
   textAssetWords: {fileID: 4900000, guid: 9bc6c0d6dc133844791330d98db34d94, type: 3}
   textAssetSynonyms: {fileID: 4900000, guid: 32cd1597d1987d741b28f7675986a000, type: 3}
   amountOfPairs: 7
+  gameBoard: {fileID: 1623351050}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

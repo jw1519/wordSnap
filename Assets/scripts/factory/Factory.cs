@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Factory : MonoBehaviour
@@ -9,12 +7,6 @@ public class Factory : MonoBehaviour
 
     public Card cardPrefab;
     public Transform parent;
-
-    List<string> words;
-    List<string> synonyms;
-
-    public TextAsset textAssetWords;
-    public TextAsset textAssetSynonyms;
 
     List<Transform> cards = new List<Transform>();
 
@@ -25,12 +17,7 @@ public class Factory : MonoBehaviour
             instance = this;
         }
     }
-    public Card GetCard()
-    {
-        GameObject instance = Instantiate(cardPrefab.gameObject, parent);
-        Card newCard = instance.GetComponent<Card>();
-        return newCard;
-    }
+    //create card with an id
     public void Create(string cardName, int id)
     {
         GameObject instance = Instantiate(cardPrefab.gameObject, parent);
@@ -50,20 +37,6 @@ public class Factory : MonoBehaviour
         foreach(var card in cards)
         {
             card.SetSiblingIndex(indexes[Random.Range(0, indexes.Count)]);
-        }
-    }
-    public void ShowAllCards()
-    {
-        foreach (var card in cards)
-        {
-            card.GetComponent<Card>().Show();
-        }
-    }    
-    public void HideAllCards()
-    {
-        foreach (var card in cards)
-        {
-            card.GetComponent<Card>().Hide();
         }
     }
 }

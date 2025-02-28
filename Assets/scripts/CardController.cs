@@ -7,6 +7,8 @@ public class CardController : MonoBehaviour
     public Transform gameBoard;
     public Card cardPrefab;
 
+    public int pairsFound;
+
     Card firstCardSelected;
     Card SecondCardSelected;
 
@@ -44,6 +46,7 @@ public class CardController : MonoBehaviour
         if (a.cardID == b.cardID)
         {
             Debug.Log("Pair Found");
+            pairsFound++;
         }
         else
         {

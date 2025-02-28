@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextAsset textAssetSynonyms;
 
     public int amountOfPairs;
+    public Transform gameBoard;
 
     private void Start()
     {
@@ -23,9 +24,24 @@ public class GameManager : MonoBehaviour
             Factory.instance.Create(synonyms[i], i);
         }
         Factory.instance.ShuffleCards();
+        ShowCards();
     }
-    private void Update()
+    public void ShowCards()
     {
-        
+        for (int i = 0; i < gameBoard.childCount; i++)
+        {
+            gameBoard.GetChild(i).GetComponent<Card>().Show();
+        }
+    }    
+    public void HideCards()
+    {
+        for (int i = 0; i < gameBoard.childCount; i++)
+        {
+            gameBoard.GetChild(i).GetComponent<Card>().Hide();
+        }
+    }
+    public void GameWon()
+    {
+
     }
 }
