@@ -6,17 +6,32 @@ public class CardController : MonoBehaviour
     public static CardController instance;
     public Transform gameBoard;
     public Card cardPrefab;
+    public int timeToShowCard;
 
     public int pairsFound;
 
     Card firstCardSelected;
     Card SecondCardSelected;
 
+    bool cardsShown;
+    float time;
+
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+        }
+    }
+    public void Update()
+    {
+        if (cardsShown == true)
+        {
+            if (time + timeToShowCard < Time.time)
+            {
+                HideCards();
+            }
         }
     }
     public void SelectedCard(Card card)
@@ -46,11 +61,34 @@ public class CardController : MonoBehaviour
         {
             Debug.Log("Pair Found");
             pairsFound++;
+            a.isFound = true;
+            b.isFound = true;
         }
         else
         {
             a.Hide();
             b.Hide();
         } 
+    }
+    public void ShowCards()
+    {
+        for (int i = 0; i < gameBoard.childCount; i++)
+        {
+            gameBoard.GetChild(i).GetComponent<Card>().Show();
+        }
+        cardsShown = true;
+        time = Time.time;
+    }
+    public void HideCards()
+    {
+        for (int i = 0; i < gameBoard.childCount; i++)
+        {
+            //if pair is found dont show card
+            if (gameBoard.GetChild(i).GetComponent<Card>().isFound == false)
+            {
+                gameBoard.GetChild(i).GetComponent<Card>().Hide();
+            }
+        }
+        cardsShown = false;
     }
 }

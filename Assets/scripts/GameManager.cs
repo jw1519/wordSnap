@@ -14,10 +14,6 @@ public class GameManager : MonoBehaviour
     public int amountOfPairs;
     public Transform gameBoard;
 
-    public int timeToShowCard;
-    bool cardsShown;
-    float time;
-
     private void Start()
     {
         words = textAssetWords.text.Split("\n").ToList();
@@ -28,36 +24,9 @@ public class GameManager : MonoBehaviour
             Factory.instance.Create(synonyms[i], i);
         }
         Factory.instance.ShuffleCards();
-        ShowCards();
+        CardController.instance.ShowCards();
     }
-    public void Update()
-    {
-        if (cardsShown == true)
-        {
-            if (time + timeToShowCard < Time.time)
-            {
-                HideCards();
-            }
-        }
-    }
-    public void ShowCards()
-    {
-        for (int i = 0; i < gameBoard.childCount; i++)
-        {
-            gameBoard.GetChild(i).GetComponent<Card>().Show();
-        }
-        cardsShown = true;
-        time = Time.time;
-    }    
-    public void HideCards()
-    {
-        for (int i = 0; i < gameBoard.childCount; i++)
-        {
-            gameBoard.GetChild(i).GetComponent<Card>().Hide();
-        }
-        cardsShown = false;
-    }
-    public void GameWon()
+    public void GameOver()
     {
 
     }
