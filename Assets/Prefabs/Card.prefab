@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 6988848962275439291}
   isSelected: 0
-  isShown: 0
+  isFound: 0
   cardName: 
   cardID: 0
 --- !u!114 &989455004717691675
@@ -246,9 +246,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

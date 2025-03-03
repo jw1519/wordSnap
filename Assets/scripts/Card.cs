@@ -21,8 +21,11 @@ public class Card : MonoBehaviour
     }
     public void Show()
     {
-        isSelected = true;
-        text.gameObject.SetActive(true);
+        if (!isSelected == true)
+        {
+            isSelected = true;
+            text.gameObject.SetActive(true);
+        }
     }
     public void Hide()
     {
