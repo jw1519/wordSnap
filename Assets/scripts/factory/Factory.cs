@@ -10,6 +10,8 @@ public class Factory : MonoBehaviour
 
     List<Transform> cards = new List<Transform>();
 
+    List<string> names = new List<string>();
+
     public void Awake()
     {
         if (instance == null)
@@ -20,11 +22,16 @@ public class Factory : MonoBehaviour
     //create card with an id
     public void Create(string cardName, int id)
     {
-        GameObject instance = Instantiate(cardPrefab.gameObject, parent);
-        Card newCard = instance.GetComponent<Card>();
-        newCard.cardName = cardName;
-        newCard.cardID = id;
-        newCard.Setword();
+        //make sure the same cards are not made
+        if (!names.Contains(cardName))
+        {
+            GameObject instance = Instantiate(cardPrefab.gameObject, parent);
+            Card newCard = instance.GetComponent<Card>();
+            newCard.cardName = cardName;
+            newCard.cardID = id;
+            newCard.Setword();
+            names.Add(cardName);   
+        }
     }
     public void ShuffleCards()
     {

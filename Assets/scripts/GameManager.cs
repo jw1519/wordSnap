@@ -13,14 +13,26 @@ public class GameManager : MonoBehaviour
     public int amountOfPairs;
     public Transform gameBoard;
 
+    List<int> numbersUsed = new List<int>();
+
     private void Start()
     {
         words = textAssetWords.text.Split("\n").ToList();
         synonyms = textAssetSynonyms.text.Split("\n").ToList();
         for (int i = 0; i < amountOfPairs; i++)
         {
-            Factory.instance.Create(words[i], i);
-            Factory.instance.Create(synonyms[i], i);
+            int random = Random.Range(0, words.Count);
+            //check if the cards have already been made
+            if (!numbersUsed.Contains(random))
+            {
+                Factory.instance.Create(words[random], random);
+                Factory.instance.Create(synonyms[random], random);
+            }
+            else
+            {
+                i--;
+            }
+            
         }
         Factory.instance.ShuffleCards();
         CardController.instance.ShowCards();
