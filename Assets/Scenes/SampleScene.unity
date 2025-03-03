@@ -628,6 +628,7 @@ MonoBehaviour:
   textAssetSynonyms: {fileID: 4900000, guid: 32cd1597d1987d741b28f7675986a000, type: 3}
   amountOfPairs: 10
   gameBoard: {fileID: 1623351050}
+  timeToShowCard: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
