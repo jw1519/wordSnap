@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int amountOfPairs;
 
     public GameObject gameOverPanel;
+    public GameObject gameWonPanel;
     private void Awake()
     {
         words = textAssetWords.text.Split("\n").ToList();
@@ -60,11 +61,21 @@ public class GameManager : MonoBehaviour
             {
                 timeText.text = Time.timeSinceLevelLoad.ToString();
             }
+            if (amountOfPairs == CardController.instance.pairsFound)
+            {
+                GameWon();
+                isRunning = false;
+            }
         }
     }
     public void GameOver()
     {
         Debug.Log("time up");
         gameOverPanel.SetActive(true);
+    }
+    public void GameWon()
+    {
+        Debug.Log("Game won");
+        gameWonPanel.SetActive(true);
     }
 }
