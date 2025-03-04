@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textAssetWords: {fileID: 4900000, guid: 9bc6c0d6dc133844791330d98db34d94, type: 3}
   textAssetSynonyms: {fileID: 4900000, guid: 32cd1597d1987d741b28f7675986a000, type: 3}
-  secondsToPlay: 120
+  secondsToPlay: 60
   timeText: {fileID: 1718178789}
   amountOfPairs: 5
   gameOverPanel: {fileID: 698876491}

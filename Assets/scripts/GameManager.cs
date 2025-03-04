@@ -43,14 +43,15 @@ public class GameManager : MonoBehaviour
     {
         if (isRunning)
         {
-            if (Time.timeSinceLevelLoad > secondsToPlay)
+            float time = secondsToPlay - Time.timeSinceLevelLoad;
+            if (time < 0)
             {
                 GameOver();
                 isRunning = false;
             }
             else
             {
-                timeText.text = Time.timeSinceLevelLoad.ToString();
+                timeText.text = time.ToString();
             }
             if (amountOfPairs == CardController.instance.pairsFound)
             {
