@@ -33,17 +33,8 @@ public class GameManager : MonoBehaviour
         isRunning = true;
         for (int i = 0; i < amountOfPairs; i++)
         {
-            int random = Random.Range(0, words.Count);
-            //check if the cards have already been made
-            if (!numbersUsed.Contains(random))
-            {
-                Factory.instance.Create(words[random], random);
-                Factory.instance.Create(synonyms[random], random);
-            }
-            else
-            {
-                i--;
-            }
+            Factory.instance.Create(words[i], i);
+            Factory.instance.Create(synonyms[i], i);
         }
         Factory.instance.ShuffleCards();
         CardController.instance.ShowAllCards();
