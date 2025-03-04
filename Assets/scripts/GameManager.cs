@@ -1,19 +1,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     List<string> words;
     List<string> synonyms;
+    List<int> numbersUsed = new List<int>();
+
+    bool isRunning;
 
     public TextAsset textAssetWords;
     public TextAsset textAssetSynonyms;
 
-    public int amountOfPairs;
-    public Transform gameBoard;
+    public float secondsToPlay;
+    public TextMeshProUGUI timeText;
 
-    List<int> numbersUsed = new List<int>();
+    public int amountOfPairs;
+
+    public GameObject gameOverPanel;
+    private void Awake()
+    {
+        isRunning = true;
+    }
 
     private void Start()
     {
@@ -35,10 +45,26 @@ public class GameManager : MonoBehaviour
             
         }
         Factory.instance.ShuffleCards();
-        CardController.instance.ShowCards();
+        CardController.instance.ShowAllCards();
+    }
+    private void Update()
+    {
+        if (isRunning)
+        {
+            if (Time.time > secondsToPlay)
+            {
+                GameOver();
+                isRunning = false;
+            }
+            else
+            {
+                timeText.text = Time.time.ToString();
+            }
+        }
     }
     public void GameOver()
     {
-
+        Debug.Log("time up");
+        gameOverPanel.SetActive(true);
     }
 }

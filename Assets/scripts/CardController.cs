@@ -30,7 +30,7 @@ public class CardController : MonoBehaviour
         {
             if (time + timeToShowCard < Time.time)
             {
-                HideCards();
+                HideAllCards();
             }
         }
     }
@@ -70,7 +70,7 @@ public class CardController : MonoBehaviour
             b.Hide();
         } 
     }
-    public void ShowCards()
+    public void ShowAllCards()
     {
         for (int i = 0; i < gameBoard.childCount; i++)
         {
@@ -79,7 +79,7 @@ public class CardController : MonoBehaviour
         cardsShown = true;
         time = Time.time;
     }
-    public void HideCards()
+    public void HideAllCards()
     {
         for (int i = 0; i < gameBoard.childCount; i++)
         {
