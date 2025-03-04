@@ -22,13 +22,14 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     private void Awake()
     {
-        isRunning = true;
-    }
-
-    private void Start()
-    {
         words = textAssetWords.text.Split("\n").ToList();
         synonyms = textAssetSynonyms.text.Split("\n").ToList();
+        StartGame(words, synonyms);
+    }
+
+    public void StartGame(List<string> words, List<string> synonyms)
+    {
+        isRunning = true;
         for (int i = 0; i < amountOfPairs; i++)
         {
             int random = Random.Range(0, words.Count);
@@ -42,7 +43,6 @@ public class GameManager : MonoBehaviour
             {
                 i--;
             }
-            
         }
         Factory.instance.ShuffleCards();
         CardController.instance.ShowAllCards();
@@ -51,14 +51,14 @@ public class GameManager : MonoBehaviour
     {
         if (isRunning)
         {
-            if (Time.time > secondsToPlay)
+            if (Time.timeSinceLevelLoad > secondsToPlay)
             {
                 GameOver();
                 isRunning = false;
             }
             else
             {
-                timeText.text = Time.time.ToString();
+                timeText.text = Time.timeSinceLevelLoad.ToString();
             }
         }
     }

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOverPanel : MonoBehaviour
 {
@@ -9,5 +8,9 @@ public class GameOverPanel : MonoBehaviour
     private void OnEnable()
     {
         pairsFoundText.text = "Pairs Found: " + CardController.instance.pairsFound.ToString();
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }
