@@ -1,15 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, ICard
 {
     public TextMeshProUGUI text;
-    public bool isSelected;
-    public bool isFound;
 
-    public string cardName;
-    public int cardID;
-
+    public string cardName { get; set; }
+    public int cardID { get; set; }
+    public bool isSelected { get; set; }
+    public bool isFound { get; set; }
     private void Awake()
     {
         isSelected = false;
