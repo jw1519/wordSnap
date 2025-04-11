@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.UI;
 
 public class CardTests
 {
@@ -22,6 +23,10 @@ public class CardTests
         // Use yield to skip a frame.
         yield return null;
 
-        
+        var card = GameObject.FindGameObjectWithTag("Card");
+        Assert.IsNotNull(card); //is null shouldnt
+        card.GetComponent<Button>().onClick.Invoke();
+
+        Assert.IsTrue(card.GetComponent<Card>().isSelected);
     }
 }

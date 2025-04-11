@@ -91,10 +91,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6988848962275439291}
-  isSelected: 0
-  isFound: 0
-  cardName: 
-  cardID: 0
 --- !u!114 &989455004717691675
 MonoBehaviour:
   m_ObjectHideFlags: 0
