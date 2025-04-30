@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 989455004717691675}
   m_Layer: 5
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6988848962275439291}
+  cardName: 
+  cardID: 0
+  isSelected: 0
+  isFound: 0
 --- !u!114 &989455004717691675
 MonoBehaviour:
   m_ObjectHideFlags: 0
