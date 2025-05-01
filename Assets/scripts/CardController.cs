@@ -10,8 +10,8 @@ public class CardController : MonoBehaviour
 
     public int pairsFound;
 
-    Card firstCardSelected;
-    Card SecondCardSelected;
+    [HideInInspector] public Card firstCardSelected;
+    [HideInInspector] public Card SecondCardSelected;
 
     bool cardsShown;
     float time;
